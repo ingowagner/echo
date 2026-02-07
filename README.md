@@ -53,10 +53,11 @@ This extension is not available in the Chrome Web Store or Firefox Add-ons. It's
 
 The generated bundle is a compressed file containing:
 
-- `network.json` - All network activity with request/response details
-- `console.json` - Console logs with timestamps
+- `bug-report.json` - Complete report summary with page info and network summary
+- `console-logs.json` - Console logs with timestamps, types, messages, and stack traces for errors
+- `network-logs.json` - All network activity with request/response details
+- `failed-requests.json` - Quick reference for failed network requests (4xx/5xx)
 - `screenshot.png` - Visual capture of the page
-- `summary.json` - Browser info, page URL, screen resolution, timestamp
 
 ## Development
 

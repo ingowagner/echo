@@ -126,13 +126,31 @@ document.addEventListener('DOMContentLoaded', function() {
         zip.file('screenshot.png', base64Data, { base64: true });
       }
       
-      // Add console logs as text file
-      const consoleLogs = currentReport.page.consoleLogs && currentReport.page.consoleLogs.length > 0
-        ? currentReport.page.consoleLogs
-            .map(log => `[${log.timestamp}] [${log.type.toUpperCase()}] ${log.message}`)
-            .join('\n')
-        : 'No console logs captured.\n\nNote: Console logs are only captured after the page is reloaded with the extension active.';
-      zip.file('console-logs.txt', consoleLogs);
+      // Add console logs as JSON file with full details including stacktraces
+      if (currentReport.page.consoleLogs && currentReport.page.consoleLogs.length > 0) {
+        const consoleLogsJSON = currentReport.page.consoleLogs.map(log => {
+          const logEntry = {
+            timestamp: log.timestamp,
+            type: log.type,
+            message: log.message
+          };
+          
+          // Include stack trace if available (for errors)
+          if (log.stack) {
+            logEntry.stack = log.stack;
+          }
+          
+          return logEntry;
+        });
+        
+        zip.file('console-logs.json', JSON.stringify(consoleLogsJSON, null, 2));
+      } else {
+        // Add empty array with note if no logs captured
+        zip.file('console-logs.json', JSON.stringify({
+          logs: [],
+          note: 'No console logs captured. Console logs are only captured after the page is reloaded with the extension active.'
+        }, null, 2));
+      }
       
       // Add network logs as JSON with detailed headers
       if (currentReport.network.requests && currentReport.network.requests.length > 0) {
