@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "echo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Capture network logs, console messages, and screenshots for comprehensive bug reports",
   "permissions": [
     "storage",
