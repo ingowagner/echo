@@ -72,6 +72,3 @@ pnpm install
 3. Go to the extensions page and click the "Reload" button for the Echo extension
 4. Test your changes
 
-## License
-
-For internal use only.
