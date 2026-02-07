@@ -1,0 +1,21 @@
+{
+  "name": "echo",
+  "version": "0.1.5",
+  "description": "Chrome extension for QA bug reporting with network logs, console messages, and screenshots",
+  "scripts": {
+    "bundle": "zip -r echo.zip manifest.json src/ icons/ README.md node_modules/jszip/dist/jszip.min.js -x '*.DS_Store'"
+  },
+  "keywords": [
+    "chrome-extension",
+    "bug-reporting",
+    "qa",
+    "testing",
+    "network-logs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.26.0",
+  "dependencies": {
+    "jszip": "^3.10.1"
+  }
+}

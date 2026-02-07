@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echo</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="../../node_modules/jszip/dist/jszip.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <p>Generates a bug report package with network logs, console messages, and screenshots.</p>
+      <button id="reportBtn">Generate package</button>
+      <div id="status"></div>
+      <div id="reportDetails" style="display: none;">
+        <button id="downloadBtn">Download Zip</button>
+        <button id="copyBtn">Copy summary to clipboard</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
