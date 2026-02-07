@@ -70,5 +70,5 @@ pnpm install
 1. Load the extension unpacked in your browser, pointing to the project folder
 2. Make your changes to the source files
 3. Go to the extensions page and click the "Reload" button for the Echo extension
-4. Test your changes
+4. Test your changes.
 
